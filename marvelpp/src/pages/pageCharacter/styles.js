@@ -5,4 +5,7 @@ export const DivPrincipal = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: black;
+    height: 100%;
+    width: 100%;
 `
