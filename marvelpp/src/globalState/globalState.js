@@ -14,7 +14,7 @@ const GlobalState = (props) => {
     const [comics, setComics] = useState([])
 
     const getCharacter = (nomePersonagem) => {
-        axios.get(`http://gateway.marvel.com:80/v1/public/characters?nameStartsWith=${nomePersonagem}&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}&limit=10`)
+        axios.get(`http://gateway.marvel.com:80/v1/public/characters?nameStartsWith=${nomePersonagem}&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}&limit=100`)
             .then((res) => {
                 setCharacter(res.data.data.results)
             }).catch((err) => {
@@ -23,7 +23,7 @@ const GlobalState = (props) => {
     }
 
     const getComics = (idPersonagem) => {
-        axios.get(`http://gateway.marvel.com:80/v1/public/characters/${idPersonagem}/comics?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}&limit=10`)
+        axios.get(`http://gateway.marvel.com:80/v1/public/characters/${idPersonagem}/comics?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}&limit=100`)
             .then((res) => {
                 console.log(res.data.data.results)
                 setComics(res.data.data.results)
