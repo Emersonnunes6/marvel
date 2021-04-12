@@ -1,7 +1,6 @@
 import Button from '@material-ui/core/Button';
 
-
-const Botao = (props) => {
+const BotaoDetalhes = (props) => {
     return (
         <Button 
             style={{
@@ -11,11 +10,11 @@ const Botao = (props) => {
             variant="contained" 
             color="primary" 
             disableElevation
-            onClick={props.onClickPersonagem}
+            onClick={props.onClickComics}
         >
-            Submit
+            See comics
         </Button>
     )
 }
 
-export default Botao
+export default BotaoDetalhes

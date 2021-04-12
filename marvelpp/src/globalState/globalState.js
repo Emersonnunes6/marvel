@@ -25,7 +25,6 @@ const GlobalState = (props) => {
     const getComics = (idPersonagem) => {
         axios.get(`http://gateway.marvel.com:80/v1/public/characters/${idPersonagem}/comics?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}&limit=100`)
             .then((res) => {
-                console.log(res.data.data.results)
                 setComics(res.data.data.results)
             }).catch((err) => {
                 console.log(err)

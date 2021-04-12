@@ -36,7 +36,8 @@ const PageCharacter = () => {
                     descricao={character.description}
                     imagem={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                     onClickComics={() => onClickComics(character.id)}
-                />
+                >
+                </CardPersonagem>
             </DivPrincipal>
         )
     })}
