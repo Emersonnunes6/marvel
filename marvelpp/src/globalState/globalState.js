@@ -6,8 +6,8 @@ import axios from 'axios'
 const GlobalState = (props) => {
     
     const timeStamp = Number(new Date())
-    const publicKey = "ee2106418a7c0f12d38199c3662cbb43"
-    const privateKey = "625398de8529fdfabbd26ec46617bc777f053e3d"
+    const publicKey = "8bfad0945e9ae0c47c24a3ce1e11a3e6"
+    const privateKey = "8e8ead9ee58fe76c2326abfb7f93a4a40e7a3be3"
     const hash = MD5(`${timeStamp}${privateKey}${publicKey}`)
 
     const [character, setCharacter] = useState([])

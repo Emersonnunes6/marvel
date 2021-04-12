@@ -23,3 +23,17 @@ p{
     margin-left: 1vh;
 }
 ` 
+
+export const Header = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+    height: 10%;
+    width: 100%;
+button {
+    margin-left: 50px;
+    height: 30%;
+}
+` 

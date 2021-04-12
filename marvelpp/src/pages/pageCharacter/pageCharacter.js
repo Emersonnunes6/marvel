@@ -3,7 +3,7 @@ import { useHistory, useParams } from "react-router";
 import CardPersonagem from "../../components/cardPersonagem";
 import GlobalStateContext from "../../globalState/globalStateContext";
 import { DivPrincipal } from "./styles";
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { onClickComics } from "../../Router/cordinator";
 
 const PageCharacter = () => {   
 
@@ -13,29 +13,21 @@ const PageCharacter = () => {
 
     const {states, requests} = useContext(GlobalStateContext)
 
-    const onClickComics = (id) => {
-        history.push(`/${id}/comics`)
-    }
-
     useEffect(() => {
         requests.getCharacter(params.inputValue)
     }, [params, requests])
     
     return (
         <div>
-            {states.character.lenght === 0 ? 
-            <DivPrincipal>
-                <CircularProgress/>
-            </DivPrincipal>
-            : states.character.map((character) => {
+            {states.character.map((character) => {
         return (
-            <DivPrincipal>
+            <DivPrincipal> 
                 <CardPersonagem
                     key={character.id}
                     nome={character.name}
                     descricao={character.description}
                     imagem={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                    onClickComics={() => onClickComics(character.id)}
+                    onClickComics={() => onClickComics(character.id, history)}
                 >
                 </CardPersonagem>
             </DivPrincipal>
