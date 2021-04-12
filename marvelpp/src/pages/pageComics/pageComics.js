@@ -1,10 +1,13 @@
 import { useContext, useEffect } from "react"
-import { useParams } from "react-router"
+import { useHistory, useParams } from "react-router"
 import CardComic from "../../components/cardComic"
 import GlobalStateContext from "../../globalState/globalStateContext"
-import { DivPrincipal } from "./styles"
+import { onClickInicio } from "../../Router/cordinator"
+import { DivPrincipal, Header } from "./styles"
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const PageComics = () => {
+    const history = useHistory()
 
     const params = useParams()
 
@@ -14,11 +17,15 @@ const PageComics = () => {
         requests.getComics(params.idPersonagem)
     })
 
-
     return (
         <DivPrincipal>
-            <h3>Comics list:</h3>
-            {states.comics.map((comic) => {
+            <Header>
+                <button onClick={() => onClickInicio(history)}>HOME</button>
+               <h3>Comics list:</h3> 
+            </Header>       
+            {states.comics.length === 0 ? 
+            <CircularProgress/> :          
+            states.comics.map((comic) => {
                 return (
                     <CardComic
                         key={comic.id}
