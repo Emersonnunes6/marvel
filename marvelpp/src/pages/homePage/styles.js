@@ -12,4 +12,8 @@ export const DivPrincipal = styled.div`
 export const ImgLogo = styled.img`
     margin-top: 5vh;
     width: 40vw;
+    
+@media screen and (min-width: 600px){
+    width: 20vw;
+}
 ` 

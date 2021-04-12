@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import {DivPrincipal} from './styles'
+import BotaoDetalhes from './botaoDetalhes';
 
 const useStyles = makeStyles({
   root: {
@@ -22,7 +23,6 @@ function CardPersonagem(props) {
         style={{
             marginTop: '2vh'
         }}
-        onClick={props.onClickComics} 
         className={classes.root}
         key={props.key}
     >
@@ -41,6 +41,7 @@ function CardPersonagem(props) {
           <Typography variant="body2" color="textSecondary" component="p">
             {props.descricao}
           </Typography>
+          <BotaoDetalhes onClickComics={props.onClickComics}/>
         </CardContent>
       </CardActionArea>
     </Card>
